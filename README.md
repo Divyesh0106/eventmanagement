@@ -8,7 +8,7 @@ Event Management REST APIs include basic APIs for user and event related operati
 Use npm to install dependencies:
 
 ```bash
-cd ./DIRECTORY/eventmanagement
+cd ./PROJECT_ROOT/
 npm i
 
 Run Project For development:
@@ -32,7 +32,7 @@ User APIs:
 Event APIs:
     - /event/listevents @require userId
     - /event/listparticipants @require eventId
-    - /event/newevent @require userId,title,description,date(),time,place,maxParticipants(>0)
+    - /event/newevent @require userId,title,description,date(YYYY-MM-DD),time(HH:mm),place,maxParticipants(>0)
     - /event/joinevent @require userId,eventId
     - /event/leaveevent @require userId,eventId
 ```

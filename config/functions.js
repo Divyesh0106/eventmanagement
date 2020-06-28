@@ -22,17 +22,22 @@ exports.func = function(){
                             }
                         }else if(reqparam[i] == 'date'|| reqparam[i] == 'dateOfBirth'){
                             let date_regex = /^(0[1-9]|1[012])[- /.] (0[1-9]|[12][0-9]|3[01])[- /.]/
-                            // if(date_regex.test(post[reqparam[i]])){
-                            //     if(new Date(post[reqparam[i]]) == 'Invalid Date'){
-                            //         console.log("IN1")
-                            //         invalid.push(reqparam[i])
-                            //     }
-                            // }else{
-                            //     console.log("IN2")
-                            //     invalid.push(reqparam[i])
-                            // }
+                            if(!date_regex.test(post[reqparam[i]])){
+                                if(new Date(post[reqparam[i]]) == 'Invalid Date'){
+                                    console.log("IN1")
+                                    invalid.push(reqparam[i])
+                                }
+                            }else{
+                                console.log("IN2")
+                                invalid.push(reqparam[i])
+                            }
                         }else if(reqparam[i]=='maxParticipants'){
                             if(isNaN(post[reqparam[i]])){                                                                    
+                                invalid.push(reqparam[i])
+                            }
+                        }else if(reqparam[i]=='time'){
+                            let reg = /^([0-1][0-9]|[2][0-3]):([0-5][0-9])$/
+                            if(!reg.test(post[reqparam[i]])){                                                                    
                                 invalid.push(reqparam[i])
                             }
                         }

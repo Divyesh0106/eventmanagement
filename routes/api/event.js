@@ -79,6 +79,8 @@ router.post("/newevent",(req,res)=>{
             title : post.title,
             description : post.description,            
             place : post.place,
+            date : new Date(post.date),
+            time : post.time,
             maxParticipants : post.maxParticipants,
         }
         let instanceEventSchema =new  eventModel(createEventObject);

@@ -5,7 +5,7 @@ const eventsSchema = new mongoose.Schema({
     description : { type : String ,default: ""},
     organizerId : { type : mongoose.Types.ObjectId , ref : 'users'},
     date : { type : Date },
-    time : { type : Date },
+    time : { type : String , default: "" },
     place : { type: String , default: "" },
     participants : [{ type: mongoose.Types.ObjectId, ref : 'users' }],
     maxParticipants : { type : Number , default : 0 },
