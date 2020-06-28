@@ -32,7 +32,11 @@ User APIs:
 Event APIs:
     - /event/listevents @require userId
     - /event/listparticipants @require eventId
+<<<<<<< HEAD
     - /event/newevent @require userId,title,description,date(YYYY-MM-DD),time(HH:mm),place,maxParticipants(>0)
+=======
+    - /event/newevent @require userId,title,description,date,time,place,maxParticipants(>0)
+>>>>>>> baa3d043a3e8c40fc0fd7823754150d71a88b4b7
     - /event/joinevent @require userId,eventId
     - /event/leaveevent @require userId,eventId
 ```
